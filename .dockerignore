@@ -1,0 +1,24 @@
+# Environments
+.env
+.venv
+venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Byte-compiled
+__pycache__/
+**/__pycache__/
+
+.editorconfig
+.gitattributes
+.github
+.gitignore
+.gitlab-ci.yml
+.idea
+.pre-commit-config.yaml
+.readthedocs.yml
+.travis.yml
+.git
