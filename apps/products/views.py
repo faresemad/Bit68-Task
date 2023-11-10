@@ -1,5 +1,5 @@
 from django_filters.rest_framework import DjangoFilterBackend
-from rest_framework import viewsets
+from rest_framework import mixins, viewsets
 from rest_framework.permissions import IsAdminUser, IsAuthenticated
 
 from apps.products.filters import PackageFilter
@@ -29,3 +29,16 @@ class SubscriptionViewSet(viewsets.ModelViewSet):
             return SubscriptionGETSerializer
         else:
             return SubscriptionPOSTSerializer
+
+
+class UserSubscriptions(mixins.ListModelMixin, viewsets.GenericViewSet):
+    """
+    Returns all subscriptions of the user
+    """
+
+    queryset = Subscription.objects.all()
+    serializer_class = SubscriptionGETSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        return Subscription.objects.filter(user=self.request.user)
