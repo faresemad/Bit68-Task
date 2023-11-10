@@ -9,6 +9,22 @@ from .serializers import UserLoginSerializer, UserRegistrationSerializer
 
 @api_view(["POST"])
 def user_registration(request):
+    """User Registration
+
+    Args:
+        {
+            "username": "test",
+            "email": "test@example.com",
+            "password": "test1234"
+        }
+
+    Returns:
+        {
+            "id": 1,
+            "username": "test",
+            "email": "test@example.com",
+        }
+    """
     serializer = UserRegistrationSerializer(data=request.data)
     if serializer.is_valid():
         serializer.save()
@@ -18,6 +34,19 @@ def user_registration(request):
 
 @api_view(["POST"])
 def user_login(request):
+    """User Login
+
+    Args:
+        {
+            "username": "test",
+            "password": "test1234"
+        }
+
+    Returns:
+        {
+            "token" : "<Token>"
+        }
+    """
     serializer = UserLoginSerializer(data=request.data)
     if serializer.is_valid():
         username = serializer.validated_data["username"]
