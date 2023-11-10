@@ -24,6 +24,7 @@ jobs:
         run: |
           pip install flake8
           flake8
-      - name: Run Django Test
+      - name: Run black
         run: |
-          python manage.py test
+          pip install black
+          black --check .
