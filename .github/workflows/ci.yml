@@ -26,5 +26,4 @@ jobs:
           flake8
       - name: Run Django Test
         run: |
-          pip install -r requirements/dev.txt
           python manage.py test
