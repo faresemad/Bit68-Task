@@ -34,7 +34,7 @@ source venv/bin/activate
 ### 4. Install Dependencies:
 
 ```bash
-pip install -r requirements.txt
+pip install -r requirements/dev.txt
 ```
 
 ### 5. Database Configuration:
