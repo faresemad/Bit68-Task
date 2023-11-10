@@ -13,9 +13,16 @@ DJANGO_APPS = [
     "django.contrib.staticfiles",
 ]
 
-THIRD_PARTY_APPS = ["rest_framework"]
+THIRD_PARTY_APPS = [
+    "rest_framework",
+    "rest_framework.authtoken",
+    "django_filters",
+]
 
-LOCAL_APPS = ["apps.accounts"]
+LOCAL_APPS = [
+    "apps.accounts",
+    "apps.products",
+]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
@@ -103,3 +110,13 @@ STATIC_URL = "/static/"
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# Rest Framework
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.TokenAuthentication",
+    ],
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.AllowAny",
+    ],
+}
