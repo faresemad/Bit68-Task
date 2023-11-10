@@ -15,10 +15,10 @@ ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=["*"])
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "bit68",
-        "USER": "faresemad",
-        "PASSWORD": "test@123",
-        "HOST": "localhost",
-        "PORT": "5432",
+        "NAME": env("DB_NAME", default="bit68"),
+        "USER": env("DB_USER", default="faresemad"),
+        "PASSWORD": env("DB_PASSWORD", default="test@123"),
+        "HOST": env("DB_HOST", default="localhost"),
+        "PORT": env("DB_PORT", default="5432"),
     }
 }
