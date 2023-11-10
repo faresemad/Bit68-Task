@@ -1,0 +1,9 @@
+SECRET_KEY =django-insecure-an!y*cr0ho%qwq(@tl(0fo1b#d%%k98oujtx&66ii9dk0*afzv
+DEBUG = True
+ALLOWED_HOSTS =localhost,127.0.0.1,0.0.0.0
+
+DB_HOST = postgres
+DB_PORT = 5432
+DB_NAME = bit68
+DB_USER = faresemad
+DB_PASSWORD = test@123

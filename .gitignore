@@ -10,7 +10,7 @@ ENV/
 .ipython/
 .env
 .envs/*
-!.envs/.local/
+!.envs/.dev/
 
 # DataBase
 db.sqlite3
