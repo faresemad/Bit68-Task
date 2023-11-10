@@ -40,7 +40,16 @@ pip install -r requirements/dev.txt
 ### 5. Database Configuration:
 
 Create a database in your chosen database system (PostgreSQL).
-Update the database settings in `settings.py` to match your database configuration.
+
+```bash
+sudo -u postgres psql
+CREATE USER faresemad WITH PASSWORD 'test@123';
+CREATE DATABASE bit68 WITH OWNER faresemad;
+GRANT ALL PRIVILEGES ON DATABASE bit68 TO faresemad;
+\q
+```
+
+Update the database settings in `config/settings/dev.py` to match your database configuration.
 
 ### 6. Migrations and Superuser:
 
